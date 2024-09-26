@@ -12,6 +12,7 @@ time.sleep(5)
 
 # Check for the element with the specified class name
 try:
+    
     # Replace 'element_selector' with the actual selector for the element you want to check
     element = driver.find_element(By.CLASS_NAME, "is-desktop")
     # If found, skip the execution of the specific part
@@ -29,11 +30,21 @@ try:
 
     input_element.send_keys(Keys.ENTER)
 
+    time.sleep(1)
 
+    input_element = driver.find_element(By.ID, "customscreenfield_StudentID")
+    input_element.send_keys("218826859")
+
+    input_element = driver.find_element(By.ID, "customscreenfield_Interaction_0")
+    input_element.send_keys(Keys.ARROW_DOWN)
+
+    input_element = driver.find_element(By.ID, "customscreenfield_Email_0")
+    input_element.send_keys("ryandezfuli@yahoo.com")
+    
         
 except Exception as e:
-        # If the element is not found, dont run the desired code
-        print("Element with class 'is-desktop' not found.")
+    # If the element is not found, dont run the desired code
+    print("Element with class 'is-desktop' not found.")
 
 
 

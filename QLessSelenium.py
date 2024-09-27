@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
 import time
 
 service = Service(executable_path="/Users/Rayamba/Desktop/pyautogui_QLess/chromedriver")
@@ -34,13 +35,22 @@ try:
 
     input_element = driver.find_element(By.ID, "customscreenfield_StudentID")
     input_element.send_keys("218826859")
+    time.sleep(1)
+    input_element.send_keys(Keys.ENTER)
+    time.sleep(1)
 
-    input_element = driver.find_element(By.ID, "customscreenfield_Interaction_0")
-    input_element.send_keys(Keys.ARROW_DOWN)
-
+   
+    input_element = Select(driver.find_element(By.ID, "customscreenfield_Interaction_0"))
+    input_element.select_by_value("Telephone Call")  
+    time.sleep(1)
     input_element = driver.find_element(By.ID, "customscreenfield_Email_0")
     input_element.send_keys("ryandezfuli@yahoo.com")
     
+    input_element.send_keys(Keys.ENTER)
+    time.sleep(1)
+
+    input_element = driver.find_element(By.ID, "tt9000004112").click()
+    time.sleep(3)
         
 except Exception as e:
     # If the element is not found, dont run the desired code

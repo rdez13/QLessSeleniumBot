@@ -117,6 +117,7 @@ try:
     input_element = driver.find_element(By.ID, "consumerfield_firstName")
     input_element.send_keys(firstName.get())
 
+    #last name and phone number
     input_element = driver.find_element(By.ID, "consumerfield_lastName")
     input_element.send_keys(lastName.get())
 
@@ -128,13 +129,14 @@ try:
     input_element.send_keys(Keys.ENTER)
 
     time.sleep(1)
-
+    # student number
     input_element = driver.find_element(By.ID, "customscreenfield_StudentID")
     input_element.send_keys(studentID.get())
     time.sleep(1)
     input_element.send_keys(Keys.ENTER)
     time.sleep(1)
     
+    # telephone cant get option value so if statment to choose the option
     if (interactionOption.get() == "Telephone Call"):
         input_element = Select(driver.find_element(By.ID, "customscreenfield_Interaction_0"))
         input_element.select_by_value("Telephone Call")  

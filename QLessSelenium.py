@@ -103,7 +103,7 @@ def serviceOptionID():
     elif (serviceOption.get() == "Waitlist Result"):
         return "tt9000004119"
 # Specify the desired time (24-hour format)
-target_time = "9:00"  
+target_time = "22:09"  
 
 # Function to check the current time
 def wait_until_target_time(target_time):

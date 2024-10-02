@@ -6,6 +6,9 @@ from selenium.webdriver.support.ui import Select
 import tkinter as tk
 from tkinter import ttk
 import time
+import time
+from datetime import datetime
+
 
 # Create the main application window
 root = tk.Tk()
@@ -99,9 +102,33 @@ def serviceOptionID():
         return "tt9000004118"
     elif (serviceOption.get() == "Waitlist Result"):
         return "tt9000004119"
+# Specify the desired time (24-hour format)
+target_time = "9:00"  
 
+# Function to check the current time
+def wait_until_target_time(target_time):
+    while True:
+        # Get the current time in HH:MM format
+        current_time = datetime.now().strftime("%H:%M")
+        
+        # Check if the current time matches the target time
+        if current_time == target_time:
+            print("It's time! Starting the bot.")
+            break
+        
+        # Sleep for 30 seconds before checking again to avoid overloading the CPU
+        time.sleep(15)
 
-service = Service(executable_path="/Users/Rayamba/Desktop/pyautogui_QLess/chromedriver")
+# Wait until the specified time
+wait_until_target_time(target_time)
+
+# Your bot code starts here
+print("Bot is running...")
+# (Bot logic)
+# Read the file path directly from the .env file
+file_path = open('.env').read().strip()
+
+service = Service(executable_path=file_path)
 driver = webdriver.Chrome(service=service)
 
 driver.get("https://kiosk.ca1.qless.com/kiosk/app/home/19713")

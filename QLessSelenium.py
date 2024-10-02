@@ -102,8 +102,9 @@ def serviceOptionID():
         return "tt9000004118"
     elif (serviceOption.get() == "Waitlist Result"):
         return "tt9000004119"
-# Specify the desired time (24-hour format)
-target_time = "22:09"  
+# TIME Specify the desired time (24-hour format) TIME
+target_time = "10:00"  
+# TIME Specify the desired time (24-hour format) TIME
 
 # Function to check the current time
 def wait_until_target_time(target_time):
@@ -149,7 +150,9 @@ try:
     input_element.send_keys(lastName.get())
 
     input_element = driver.find_element(By.ID, "consumerfield_phone")
-    input_element.send_keys(phoneNum.get())
+    # input_element.send_keys(phoneNum.get())
+    for digit in phoneNum.get():
+         input_element.send_keys(digit)
 
     time.sleep(1)
 

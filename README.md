@@ -1,5 +1,5 @@
 
-# QLess Virtual Queue Bot
+# QLess Selenium Bot
 
 ## Overview
 

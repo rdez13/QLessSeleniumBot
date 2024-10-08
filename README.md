@@ -61,7 +61,7 @@ pip install tkinter
 Selenium requires a ChromeDriver to interact with the Chrome browser. Follow the steps below to set it up:
 
 1. **Download ChromeDriver**:
-   - Visit [ChromeDriver downloads](https://sites.google.com/a/chromium.org/chromedriver/downloads) and download the version that matches your installed version of Chrome.
+   - Download the version that matches your installed version of Chrome.
 
 2. **Add ChromeDriver to Your Project**:
    - Place the ChromeDriver executable in a known directory.
